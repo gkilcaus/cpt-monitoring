@@ -1,0 +1,26 @@
+{
+    "WSMonitoringConfig": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "SiteId": {"S": "googlesearch"},
+                    "endpoint": {"S": "https://www.google.com/"},
+                    "rate": {"N": "2"},
+                    "latencyConstraint": {"N": "2"},
+                    "testString": {"S": "google"}
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "SiteId": {"S": "cujosite"},
+                    "endpoint": {"S": "https://www.cujo.com/"},
+                    "rate": {"N": "1"},
+                    "latencyConstraint": {"N": "5"},
+                    "testString": {"S": "cujo"}
+                }
+            }
+        }
+    ]
+}

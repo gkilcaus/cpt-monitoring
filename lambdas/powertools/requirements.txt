@@ -1,0 +1,7 @@
+aws_lambda_powertools
+aws_xray_sdk
+fastjsonschema
+jsonpickle
+wrapt
+boto3==1.15.11
+future

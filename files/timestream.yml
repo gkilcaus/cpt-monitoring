@@ -1,0 +1,24 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Timestream Database for CPT Website Monitoring
+Resources:
+  timestreamDB:
+    Type: "AWS::Timestream::Database"
+    Properties:
+      DatabaseName: CPTMonitoring
+  timestreamTable:
+    Type: "AWS::Timestream::Table"
+    Properties:
+      DatabaseName: !Ref "timestreamDB"
+      TableName: WebsiteMonitoringData
+      RetentionProperties:
+        MemoryStoreRetentionPeriodInHours: 12
+        MagneticStoreRetentionPeriodInDays: 180
+Outputs:
+  Database:
+    Value: !Ref "timestreamDB"
+  Table:
+    Description: Timestream Data table name
+    Value: !Ref "timestreamTable"
+  TableArn:
+    Description: Timestream Data table arn
+    Value: !GetAtt "timestreamTable.Arn"
